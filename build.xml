@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="jenkins-demo" default="full-build">
+<project name="name-of-project" default="full-build">
  <!-- By default, we assume all tools to be on the $PATH -->
  <property name="pdepend" value="pdepend"/>
  <property name="phpcpd"  value="phpcpd"/>
@@ -198,7 +198,7 @@
    <arg value="--standard=PSR2" />
    <arg value="--extensions=php" />
    <arg value="--ignore=autoload.php" />
-   <arg path="${basedir}/app" />
+   <arg path="${basedir}/src" />
    <arg path="${basedir}/tests" />
   </exec>
 
@@ -252,7 +252,7 @@
 
   <property name="phpunit.done" value="true"/>
  </target>
-<!--  
+
  <target name="phpdox"
          unless="phpdox.done"
          depends="phploc-ci,phpcs-ci,phpmd-ci"
@@ -261,7 +261,7 @@
 
   <property name="phpdox.done" value="true"/>
  </target>
--->
+
  <target name="-check-failure">
   <fail message="PHPUnit did not finish successfully">
    <condition>
